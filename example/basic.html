@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Example</title>
+    <script src="../dist/environment.js">
+    </script>
+</head>
+<body>
+    <style>
+        html, body, #main {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <div id="main"></div>
+    <script>
+        var environment = new Environment(document.getElementById('main'));
+        environment.loadCubemap({
+            nx: 'asset/env/mobile_r.jpg',
+            px: 'asset/env/mobile_l.jpg',
+            ny: 'asset/env/mobile_d.jpg',
+            py: 'asset/env/mobile_u.jpg',
+            nz: 'asset/env/mobile_f.jpg',
+            pz: 'asset/env/mobile_b.jpg'
+        }, function () {
+            environment.start();
+        });
+        environment.initParticleEffect({
+            sprite: './asset/snowflake7_alpha.png',
+            size: [20, 100]
+        })
+
+        window.addEventListener('resize', environment.resize.bind(environment));
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "environment",
+  "version": "1.0.0",
+  "description": "Environment rendering",
+  "main": "dist/environment.js",
+  "scripts": {
+    "build": "rollup -c && uglifyjs dist/environment.js -c -m  > dist/environment.min.js",
+    "dev": "rollup -c -w --sourcemap"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "qtek": "^0.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.3.1"
+  }
+}
